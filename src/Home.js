@@ -7,6 +7,7 @@ function Home() {
   return (
     <>
       <Nav />
+
       <div className="container home">
         {/* Hero Section */}
         <div className="row hero align-items-center">
@@ -55,7 +56,8 @@ function Home() {
           </div>
         </div>
       </div>
-      <Carousel className=""/>
+      
+      <Carousel />
     </>
   );
 }
