@@ -61,10 +61,3 @@ function Home() {
 }
 
 export default Home;
-// echo "# Energy" >> README.md
-// git init
-// git add README.md
-// git commit -m "first commit"
-// git branch -M main
-// git remote add origin https://github.com/GowthamSiddharth798/Energy.git
-// git push -u origin main
