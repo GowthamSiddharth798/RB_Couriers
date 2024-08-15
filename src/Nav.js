@@ -16,7 +16,7 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ml-auto">
             <Link to="/" className="nav-link">Home</Link>
-            <Link to="/about" className="nav-link">About Us</Link>
+            <Link to="/AboutUs" className="nav-link">About Us</Link>
             <Link to="/services" className="nav-link">Services</Link>
             <Link to="/pricing" className="nav-link">Pricing</Link>
           </div>

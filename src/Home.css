@@ -6,10 +6,10 @@
 /* Hero Section */
 .hero {
   text-align: left;
-  padding: 100px 20px;
+  padding: 5px 20px;
   background-color: #f7f7f7;
   animation: fadeIn 2s ease-out;
-  margin: 10px;
+  margin: 1px;
 }
 
 .hero-text h1 {
@@ -42,6 +42,8 @@
 }
 
 .feature-box {
+  margin: 5px;
+  margin-top: 10px;
   background-color: #ffffff;
   border-radius: 8px;
   padding: 20px;
@@ -50,20 +52,23 @@
 }
 
 .feature-box:hover {
+  background-image: url("https://graphicsfamily.com/wp-content/uploads/edd/2020/12/Express-Delivery-Logo-2048x1247.jpg");
     transform: scale(1.05);
     background-color: rgb(87, 87, 85);
-    color: rgb(243, 187, 89);
+    color: rgb(255, 255, 255);
+    margin: 15px;
+    box-shadow: 50px 40px 58px rgba(0, 0, 0, 0.1);
 }
 
 .feature-box h3 {
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 1.15em;
   
 }
 
 .feature-box p {
   font-size: 1em;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 /* CTA Section */
@@ -88,4 +93,10 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.fast:hover{
+  background-image: url("https://graphicsfamily.com/wp-content/uploads/edd/2020/12/Express-Delivery-Logo-2048x1247.jpg");
+  /* background-size: cover; */
+
 }
