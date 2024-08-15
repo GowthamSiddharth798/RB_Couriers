@@ -1,0 +1,87 @@
+/* General styling for the home component */
+.home {
+  padding: 50px 0;
+}
+
+/* Hero Section */
+.hero {
+  text-align: left;
+  padding: 100px 20px;
+  background-color: #f7f7f7;
+  animation: fadeIn 2s ease-out;
+}
+
+.hero-text h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.hero-cta {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.hero-cta:hover {
+  background-color: #0056b3;
+}
+
+/* Features Section */
+.features {
+  margin-top: 50px;
+}
+
+.feature-box {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.feature-box:hover {
+    transform: scale(1.05);
+    background-color: rgb(87, 87, 85);
+    color: rgb(243, 187, 89);
+}
+
+.feature-box h3 {
+  margin-top: 20px;
+  font-size: 1.5em;
+}
+
+.feature-box p {
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+/* CTA Section */
+.cta {
+  background-color: #f0f0f0;
+  padding: 30px 20px;
+  border-radius: 8px;
+}
+
+.cta-text {
+  font-size: 1.75em;
+  margin-bottom: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

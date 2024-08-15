@@ -1,0 +1,9 @@
+.navbar-image {
+    width: 30px;
+    height: 30px!important;
+    padding: 5px;
+  }
+.sticky{
+  position:static!important;
+
+}
