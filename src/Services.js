@@ -1,6 +1,5 @@
 import React from 'react';
 import Nav from './Nav';
-import Carousel from './Carousel';
 import './Services.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
@@ -9,7 +8,6 @@ const Services = () => {
     <>
         <Nav/>
         <div className="container">
-            {/* <Carousel className="mt-auto"/> */}
             <h2>Our Services</h2>
             <div className="row">
                 <div className="col-md-6 section">
