@@ -13,13 +13,14 @@
 }
 
 .hero-text h1 {
-  font-size: 2.5em;
+  font-size: 2.8em;
   margin-bottom: 20px;
 }
 
 .hero-text p {
   font-size: 1.2em;
   margin-bottom: 30px;
+  
 }
 
 .hero-cta {
@@ -52,7 +53,7 @@
 }
 
 .feature-box:hover {
-  background-image: url("https://graphicsfamily.com/wp-content/uploads/edd/2020/12/Express-Delivery-Logo-2048x1247.jpg");
+    background-image: url("E:\rbcourier\src\delivery_image5.jpg");
     transform: scale(1.05);
     background-color: rgb(87, 87, 85);
     color: rgb(255, 255, 255);
@@ -62,7 +63,8 @@
 
 .feature-box h3 {
   margin-top: 30px;
-  font-size: 1.15em;
+  font-weight: bold;
+  font-size: 1.35em;
   
 }
 

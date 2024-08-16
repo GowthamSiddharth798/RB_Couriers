@@ -7,7 +7,7 @@ const Services = () => {
   return (
     <>
         <Nav/>
-        <div className="container">
+        <div className="container m-auto">
             <h2>Our Services</h2>
             <div className="row">
                 <div className="col-md-6 section">

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Button</title>
+  <style>
+    /* Style for the floating call button */
+    .call-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #28a745;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+
+    .call-button:hover {
+      transform: scale(1.1);
+    }
+
+    .call-button img {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* Styling the modal overlay */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; 
+      z-index: 1001; /* Above the button */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Call Button -->
+<div class="call-button" id="callButton">
+  <img src="https://img.icons8.com/ios-glyphs/30/ffffff/phone.png" alt="Call Icon">
+</div>
+
+<!-- Modal for confirmation -->
+<div id="callModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Do you want to call RB Express?</p>
+    <button id="confirmCall">Call Now</button>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  // Get the modal
+  const modal = document.getElementById("callModal");
+
+  // Get the button that opens the modal
+  const callButton = document.getElementById("callButton");
+
+  // Get the <span> element that closes the modal
+  const closeSpan = document.querySelector(".close");
+
+  // When the user clicks on the call button, open the modal
+  callButton.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  closeSpan.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks on the confirm call button, trigger the phone call
+  document.getElementById("confirmCall").onclick = function() {
+    window.location.href = "tel:+917989094014"; // Your updated number
+  }
+
+  // Close the modal if user clicks anywhere outside of it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>

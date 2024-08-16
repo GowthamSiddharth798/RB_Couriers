@@ -8,7 +8,7 @@ function Home() {
     <>
       <Nav />
       <div>
-          <div className="container home">
+          <div className="container home m-auto">
             {/* Hero Section */}
             <div className="row hero align-items-center">
               <div className="col-md-6 hero-text">

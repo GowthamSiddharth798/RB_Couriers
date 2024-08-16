@@ -3,8 +3,8 @@ import './Logo.css';
 
 const Logo = () => {
   return (
-    <div className="logo-container">
-      <div className="logo-icon truck">
+    <div className="logo-container ">
+      <div className="logo-icon truck ">
         🚚 {/* Truck emoji */}
       </div>
       <div className="logo-icon airplane flying">

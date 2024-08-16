@@ -7,12 +7,12 @@
   }
   
   .logo-icon {
-    font-size: 3rem; /* Adjust size as needed */
+    font-size: 3.5rem; /* Adjust size as needed */
     margin-right: 10px;
   }
   
   .flying {
-    animation: fly 5s ease-in-out infinite;
+    animation: fly 8s ease-in-out infinite;
   }
   
   .logo-text {
