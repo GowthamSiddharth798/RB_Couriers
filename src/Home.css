@@ -53,7 +53,7 @@
 }
 
 .feature-box:hover {
-    background-image: url("E:\rbcourier\src\delivery_image5.jpg");
+    background-image: url("src\delivery_image5.jpg");
     transform: scale(1.05);
     background-color: rgb(87, 87, 85);
     color: rgb(255, 255, 255);
