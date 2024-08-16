@@ -2,7 +2,6 @@ import React from 'react';
 import Nav from './Nav';
 import './Services.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import delivery_image5 from './assets/images/delivery_image5.jpg';
 
 const Services = () => {
   return (

@@ -3,7 +3,6 @@ import Nav from './Nav';
 import Carousel from './Carousel';
 import './Home.css'; // Add your CSS styles here
 import Logo from './Logo';
-import delivery_image5 from './assets/images/delivery_image5.jpg';
 
 function Home() {
   return (
