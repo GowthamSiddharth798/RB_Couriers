@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
+    <div className='mb-4'>
+      <nav className="navbar navbar-expand-lg navbar-light bg-primary fixed-top shadow ">
         <Link to="/" className="navbar-brand">
           <img src={RB_logo} className="navbar-image" alt='RB Courier Logo' height={35} />
         </Link>
