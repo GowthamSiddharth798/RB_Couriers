@@ -3,7 +3,7 @@ import Nav from './Nav';
 import Carousel from './Carousel';
 import './Home.css'; // Add your CSS styles here
 import Logo from './Logo';
-
+import Call from './call.js'
 function Home() {
   return (
     <>
@@ -57,7 +57,7 @@ function Home() {
           </div>
           <Carousel />
       </div>
-      
+      <Call/>
     </>
   );
 }
