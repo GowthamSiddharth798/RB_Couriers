@@ -56,7 +56,7 @@
   background-image: url("https://graphicsfamily.com/wp-content/uploads/edd/2020/12/Express-Delivery-Logo-2048x1247.jpg");
     /* background-image: url("src\delivery_image5.jpg"); */
     transform: scale(1.05);
-    background-color: rgb(87, 87, 85);
+    /* background-color: rgb(87, 87, 85); */
     color: rgb(255, 255, 255);
     margin: 15px;
     box-shadow: 50px 40px 58px rgba(0, 0, 0, 0.1);

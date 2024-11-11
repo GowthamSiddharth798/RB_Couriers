@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Location Finder - OpenStreetMap</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #location-info {
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .description {
+            margin-top: 30px;
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .highlight {
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="display-5 fw-bold">Track Your Location</h1>
+        <p class="lead">Your live location is displayed and updated every 2 seconds.</p>
+
+        <div id="location-info" class="alert alert-info" role="alert">
+            Fetching location...
+        </div>
+
+        <div id="map" class="shadow"></div>
+
+        <!-- Description Section -->
+        <div class="description mt-4">
+            <h2 class="fw-bold">How This System is Useful</h2>
+            <p>
+                This real-time location tracking system is especially helpful in hazardous working environments, such as <span class="highlight">coal mines</span>. In case of an emergency, such as a worker getting stuck or lost in the mine, this system allows <span class="highlight">rescue teams</span> to precisely locate the worker's current position using GPS technology.
+            </p>
+            <p>
+                The <span class="highlight">live tracking</span> feature updates the location every 2 seconds, ensuring accurate and up-to-date information. By integrating this system, it is possible to respond quickly and efficiently to emergency situations, minimizing the risks and ensuring worker safety. This technology can significantly improve rescue operations and <span class="highlight">save lives</span> during critical moments.
+            </p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Leaflet JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script>
+        let map, marker;
+        const coalMinerIcon = L.icon({
+            iconUrl: 'https://cdn3.iconfinder.com/data/icons/labour-day-bzzricon-filled-lines/512/15_Miner-1024.png',  // Replace with your coal miner logo URL
+            iconSize: [50, 50],  // size of the icon
+            iconAnchor: [25, 50],  // point of the icon which will correspond to marker's location
+            popupAnchor: [0, -50]  // point from which the popup should open relative to the iconAnchor
+        });
+
+        // Initialize the OpenStreetMap using Leaflet
+        function initMap() {
+            map = L.map('map').setView([0, 0], 15);  // Default center, will be updated later
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+        }
+
+        // Automatically get the location when the page loads
+        window.onload = function() {
+            initMap();
+            getLocation();
+            setInterval(getLocation, 2000); // Send data every 2 seconds
+        };
+
+        function getLocation() {
+            const locationInfo = document.getElementById('location-info');
+            
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                locationInfo.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            const locationInfo = document.getElementById('location-info');
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            locationInfo.innerHTML = `<h3 class="fw-bold">Your Current Location:</h3>
+                                      <p>Latitude: ${latitude}</p>
+                                      <p>Longitude: ${longitude}</p>`;
+
+            // Update the OpenStreetMap map
+            const userLocation = [latitude, longitude];
+            if (marker) {
+                marker.setLatLng(userLocation);
+                map.setView(userLocation, 15);
+            } else {
+                marker = L.marker(userLocation, { icon: coalMinerIcon }).addTo(map);
+                map.setView(userLocation, 15);
+            }
+
+            // Send latitude and longitude to ESP32
+            sendToArduino(latitude, longitude);
+        }
+
+        function sendToArduino(latitude, longitude) {
+            const url = 'http://192.168.216.103/location';
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    latitude: latitude,
+                    longitude: longitude
+                }),
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+
+        function showError(error) {
+            const locationInfo = document.getElementById('location-info');
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    locationInfo.innerHTML = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    locationInfo.innerHTML = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    locationInfo.innerHTML = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    locationInfo.innerHTML = "An unknown error occurred.";
+                    break;
+            }
+        }
+    </script>
+
+</body>
+</html>

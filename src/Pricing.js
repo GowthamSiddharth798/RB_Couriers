@@ -26,7 +26,6 @@ const Pricing = () => {
       <h1 className='text-center pt-5'>  Pricing & Details</h1>
       <Container className='m-auto pt-5'>
         <Row className="mt-4">
-          
           {countries.map((country, index) => (
             <Col key={index} sm={12} md={6} lg={4} xl={3} className="mb-4">
               <Card
@@ -34,7 +33,7 @@ const Pricing = () => {
                 ref={el => cardRefs.current[index] = el}
               >
                 <Card.Body>
-                  <Card.Title>{country}</Card.Title>
+                  <Card.Title>US</Card.Title>
                 </Card.Body>
               </Card>
             </Col>

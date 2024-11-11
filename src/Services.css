@@ -19,7 +19,7 @@ h2 {
     background: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 1s ease-in-out, box-shadow 0.3s ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -44,19 +44,15 @@ h2 {
 
 .service-box ul li:hover {
     background-image: url("https://graphicsfamily.com/wp-content/uploads/edd/2020/12/Express-Delivery-Logo-2048x1247.jpg");
-    /* background-image: url("src\delivery_image5.jpg"); */
-    transform: scale(1.05);
-    background-color: rgb(134, 178, 199);
+    transform: scale(1);
+    background-color: rgb(94, 97, 98);
     color: rgb(255, 255, 255);
-    margin: 15px;
     box-shadow: 50px 40px 58px rgba(0, 0, 0, 0.1);
     
 }
 
 .service-box:hover {
-    transform: translateY(-5px);
     box-shadow: 0 20px 15px rgba(0, 0, 0, 0.15);
-    /* background-color: rgb(246, 144, 61); */
 }
 
 @keyframes fadeIn {
