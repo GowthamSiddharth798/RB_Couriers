@@ -16,12 +16,13 @@ const Footer = () => (
         </div>
         <div className="col-md-4">
           <h5>Quick Links</h5>
-          <ul className="footer-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#track">Track</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+           <ul className="footer-links">
+  <li><Link to="/">Home</Link></li>
+  <li><Link to="/services">Services</Link></li>
+  <li><Link to="/track">Track</Link></li> {/* Ensure a /track route exists */}
+  <li><Link to="/contact-us">Contact</Link></li>
+</ul>
+
         </div>
         <div className="col-md-4">
           <h5>Contact Us</h5>
