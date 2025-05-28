@@ -5,6 +5,7 @@ import Logo from './Logo';
 import Call from './call';
 import './Home.css';
 import './Footer.css';
+import { Link } from "react-router-dom";
 
 const Footer = () => (
   <footer className="footer mt-5">
