@@ -1,0 +1,14 @@
+/* Contact.css */
+body {
+  background-color: #f9f9f9;
+}
+
+h1 {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+form {
+  max-width: 600px;
+  margin: auto;
+}

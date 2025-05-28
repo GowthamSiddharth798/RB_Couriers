@@ -1,83 +1,81 @@
-import React from 'react'
-import Nav from './Nav'
+import React from 'react';
+import Nav from './Nav';
 import { motion } from 'framer-motion';
-import './About.css'
+import './About.css';
 import delivery_image4 from './delivery_image4.png';
 
 const About = () => {
   return (
     <>
-       <Nav/>
-       <div className="App">
-      <header className="App-header">
-        <motion.h1 
-          initial={{ opacity: 0, y: -100 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 1 }}>
+      <Nav />
+      <section className="about-section">
+        <motion.h1
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center fw-bold display-5 mb-4"
+        >
           About Us
         </motion.h1>
 
-        <motion.div 
-          className="container"
-          initial={{ scale: 0.8, opacity: 0 }} 
-          animate={{ scale: 1, opacity: 1 }} 
-          transition={{ delay: 0.5, duration: 1.5 }}>
-          <h2>Fast and Secure Courier Services in Hyderabad</h2>
-          <p>
-            <strong>RB Express</strong> is a premier courier service provider headquartered in Hyderabad, India. 
-            We specialize in offering reliable and efficient delivery solutions tailored for individuals and businesses alike.
-          </p>
-          <p>
-            Whether you're sending important documents, parcels, or even larger items, RB Express ensures safe, timely, 
-            and secure deliveries.
-          </p>
+        <motion.div
+          className="about-content container"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3, duration: 1 }}
+        >
+          <div className="row align-items-center">
+            <div className="col-md-6 mb-4 mb-md-0">
+              <h2 className="fw-semibold mb-3">Fast & Reliable Courier Services in Hyderabad</h2>
+              <p className="text-muted">
+                <strong>Jetway Express</strong> is a top-tier courier service company based in Hyderabad. We offer secure, fast, and
+                customer-centric delivery services for both individuals and enterprises.
+              </p>
+              <p className="text-muted">
+                From essential documents to larger parcels, <strong>Jetway Express</strong> guarantees safety, speed, and complete transparency
+                in every shipment.
+              </p>
+            </div>
+            <div className="col-md-6 text-center">
+              <img src={delivery_image4} alt="Delivery Service" className="img-fluid rounded shadow-sm" />
+            </div>
+          </div>
         </motion.div>
 
-        <motion.div 
-          className="services"
-          initial={{ x: '-100vw' }} 
-          animate={{ x: 0 }} 
-          transition={{ type: 'spring', stiffness: 50, delay: 1 }}>
-         {/* <div className="d-flex flex-column flex-md-row align-items-center"> */}
-  <div className="text-center text-md-left mb-4 mb-md-0">
-    <h3>Our Commitment</h3>
-    <ul className="list-unstyled">
-      <li>Same-Day Delivery</li>
-      <li>Next-Day Delivery</li>
-      <li>Express Delivery</li>
-      <li>Advanced Tracking System</li>
-    </ul>
-  </div>
-  <div className="d-flex justify-content-center justify-content-md-start flex-grow-1">
-                <img 
-                  src={delivery_image4} 
-                  alt="Delivery" 
-                  className="img-fluid rounded shadow-lg" 
-                />
-                </div>
-
+        <motion.div
+          className="services-list container mt-5"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 1 }}
+        >
+          <h3 className="fw-semibold mb-3 text-center">Our Services</h3>
+          <ul className="list-group list-group-flush text-start mx-auto" style={{ maxWidth: '500px' }}>
+            <li className="list-group-item">Same-Day Delivery</li>
+            <li className="list-group-item">Next-Day Delivery</li>
+            <li className="list-group-item">Express & Priority Shipping</li>
+            <li className="list-group-item">Live Tracking System</li>
+          </ul>
         </motion.div>
 
-        <motion.div 
-          className="cta"
-          initial={{ y: '100vh' }} 
-          animate={{ y: 0 }} 
-          transition={{ type: 'spring', stiffness: 80, delay: 1.5 }}>
-          <h3>Let's Talk</h3>
-          <p>Need assistance with your delivery? Have a question? We're here to help.</p>
+        <motion.div
+          className="cta-box text-center mt-5"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 1 }}
+        >
+          <h4 className="fw-bold">Need Expert Delivery Solutions?</h4>
+          <p className="text-muted mb-3">We're always here to answer your questions and help your logistics run smoothly.</p>
           <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="contact-button"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="btn btn-primary px-4 py-2"
           >
             Get a Free Consultation
           </motion.button>
         </motion.div>
-      </header>
-       </div>
-      
+      </section>
     </>
-  )
-}
+  );
+};
 
 export default About;

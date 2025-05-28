@@ -1,0 +1,61 @@
+
+/* Footer Styles */
+.footer {
+  background-color: #1d1d1d;
+  color: #ffffff;
+  padding: 40px 0;
+  margin-top: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer h5 {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  color: #f8f9fa;
+  font-weight: 600;
+}
+
+.footer p,
+.footer a {
+  color: #d6d6d6;
+  font-size: 0.95rem;
+}
+
+.footer a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+}
+
+.footer .container {
+  max-width: 1140px;
+}
+
+.footer .text-center p {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #bbbbbb;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    text-align: center;
+  }
+  .footer .col-md-4 {
+    margin-bottom: 30px;
+  }
+}

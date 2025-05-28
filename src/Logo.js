@@ -11,7 +11,7 @@ const Logo = () => {
         ✈️ {/* Airplane emoji */}
       </div>
       <div className="logo-text">
-        <span className="logo-rb">RB</span>
+        <span className="logo-rb">Jetway Express</span>
         <span className="logo-couriers">Couriers</span>
       </div>
     </div>

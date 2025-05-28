@@ -10,7 +10,7 @@ const Services = () => {
         <div className="container m-auto">
             <h2>Our Services</h2>
             <div className="row">
-                <div className="col-md-6 section">
+                <div className="col-md-6 section mt-5">
                 <div className="service-box">
                     <h3>Packaging and Protection</h3>
                     <ul>
@@ -21,7 +21,7 @@ const Services = () => {
                         </ul>
                 </div>
                 </div>
-                <div className="col-md-6 section">
+                <div className="col-md-6 section mt-5">
                     <div className="service-box">
                         <h3>Security Measures</h3>
                         <ul>
@@ -31,7 +31,7 @@ const Services = () => {
                             </ul>
                     </div>
                 </div>
-                <div className="col-md-6 section">
+                <div className="col-md-6 section mt-3">
                     <div className="service-box">
                         <h3>Risk Management</h3>
                         <ul>
@@ -40,7 +40,7 @@ const Services = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="col-md-6 section">
+                <div className="col-md-6 section mt-3">
                     <div className="service-box">
                         <h3>Courier Selection</h3>
                         <ul>
